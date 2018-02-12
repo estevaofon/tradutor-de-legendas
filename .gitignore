@@ -1,0 +1,17 @@
+env/
+wenv/
+build/
+dist/
+temp/
+
+*.egg-info/
+*.egg
+*.py[cod]
+__pycache__/
+*.so
+*~
+
+# due to using tox and pytest
+.tox
+.cache
+check_rst.py
