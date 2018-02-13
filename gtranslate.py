@@ -19,7 +19,7 @@ new_f = base+'-PORTUGUES'+'.srt'
 
 transleted_list = []
 
-with open(english_srt,'r') as data:
+with open(english_srt, 'r', encoding='utf-8') as data:
     srt_list = data.readlines()
     chunks = [srt_list[x:x+100] for x in range(0, len(srt_list), 100)]
     for chunk in chunks:
@@ -29,7 +29,7 @@ with open(english_srt,'r') as data:
         translations.text = translations.text.replace(': ', ':')
         transleted_list.append(translations.text+"\n")
 
-with open(new_f, 'w', newline='\r\n') as data:
+with open(new_f, 'w', encoding='utf-8', newline='\r\n') as data:
     srt_list = []
     for item in transleted_list:
         for i in item.splitlines(keepends=True):
