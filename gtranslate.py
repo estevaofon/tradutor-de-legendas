@@ -3,6 +3,7 @@ from googletrans import Translator
 import glob
 translator = Translator()
 import os
+import codecs
 
 srt_files = glob.glob('*.srt')
 english_srt = ''
@@ -29,7 +30,7 @@ with open(english_srt, 'r', encoding='utf-8') as data:
         translations.text = translations.text.replace(': ', ':')
         transleted_list.append(translations.text+"\n")
 
-with open(new_f, 'w', encoding='utf-8', newline='\r\n') as data:
+with open(new_f, 'w', encoding='utf-8-sig') as data:
     srt_list = []
     for item in transleted_list:
         for i in item.splitlines(keepends=True):
